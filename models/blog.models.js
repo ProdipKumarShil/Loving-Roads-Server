@@ -5,4 +5,4 @@ const blogSchema = new mongoose.Schema({
   price: Number,
 })
 
-module.exports = mongoose.model('Product', blogSchema)
+module.exports = mongoose.model('Product', blogSchema, "lovingRoads")
