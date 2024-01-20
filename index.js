@@ -12,8 +12,8 @@ const blogRoute = require('./routes/blog')
 const userRoute = require('./routes/user')
 
 // mongoose connection
-mongoose.connect('mongodb://localhost:27017/blogDB')
-// mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ta7i6kc.mongodb.net/lovingRoads`)
+// mongoose.connect('mongodb://localhost:27017/blogDB')
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ta7i6kc.mongodb.net/lovingRoads`)
   .then(() => console.log("DB connected"))
   .catch(e => console.log(e.message))
 

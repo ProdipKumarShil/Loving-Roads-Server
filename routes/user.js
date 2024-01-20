@@ -2,6 +2,16 @@ const express = require('express');
 const User = require('../models/user.models');
 const router = express.Router()
 
+router.get('/getUsers', async(req, res) => {
+  try{
+    const users = await User.find()
+    res.status(201).send({count: users.length, users: users})
+  }
+  catch{
+    res.status(500).send({status: false, message: "Failed to get users"})
+  }
+})
+
 router.post('/addUser', async (req, res) => {
   try {
     const userData = req.body
